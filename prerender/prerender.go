@@ -45,7 +45,7 @@ func New(o *Options) *Prerender {
 	return &Prerender{Options: o}
 }
 
-func (p *Prerender) Handle(next http.Handler) http.Handler {
+func (p *Prerender) Handler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if !p.ShouldPrerender(r) {
 			next.ServeHTTP(w, r)

@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	prerenderHandler := prerender.New(prerender.NewOptions())
+	prerender := prerender.New(prerender.NewOptions())
 
-	http.Handle("/", prerenderHandler.Handle(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	http.Handle("/", prerender.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		tpl := template.Must(template.ParseFiles("index.html"))
 		tpl.Execute(w, nil)
 	})))
