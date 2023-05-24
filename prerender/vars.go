@@ -30,6 +30,7 @@ var (
 		"TelegramBot",
 		"LineBot",
 		"AdsBot-Google",
+		"Google-InspectionTool",
 	}
 
 	extensionsToIgnore = []string{
